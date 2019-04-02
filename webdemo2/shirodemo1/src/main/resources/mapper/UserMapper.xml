@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.caihao.shirodemo1.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.caihao.shirodemo1.entity.User" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="salt" property="salt" jdbcType="VARCHAR" />
+    <result column="role" property="role" jdbcType="SMALLINT" />
+  </resultMap>
+
+  <!--根据用户名获取用户信息-->
+  <select id="selectUserByUsername" resultType="com.caihao.shirodemo1.entity.User">
+    SELECT
+      id,
+      user_name,
+      `password`,
+      salt,
+      role,
+      permission
+    FROM `user`
+    WHERE user_name = #{username}
+  </select>
+</mapper>
