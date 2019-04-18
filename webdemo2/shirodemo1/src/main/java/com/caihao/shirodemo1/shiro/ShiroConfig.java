@@ -54,7 +54,7 @@ public class ShiroConfig {
   }
 
   /**
-   * 2.创建UserRealm
+   * 2.创建安全管理器
    *
    * @param userRealm realm
    * @return org.apache.shiro.web.mgt.DefaultWebSecurityManager
